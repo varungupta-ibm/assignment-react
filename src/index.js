@@ -5,8 +5,8 @@ import ReactDOM from 'react-dom/client';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
-import './Style/App.css';
-import './Style/Style.scss';
+import './style/App.css';
+import './style/Style.scss';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
