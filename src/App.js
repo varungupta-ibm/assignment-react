@@ -7,12 +7,12 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 // Components
-import PageNotFound from './Components/PageNotFound';
-import Login from './Components/Login';
-import Register from './Components/Regsiter';
-import Header from './Components/Header';
-import Dashboard from './Components/Dashboard';
-import Employees from './Components/Employees';
+import PageNotFound from './components/PageNotFound';
+import Login from './components/Login';
+import Register from './components/Regsiter';
+import Header from './components/Header';
+import Dashboard from './components/Dashboard';
+import Employees from './components/Employees';
 
 function App() {
   return (

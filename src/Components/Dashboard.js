@@ -1,7 +1,16 @@
+import { useEffect } from "react";
+
 import Container from 'react-bootstrap/Container';
 import Header from './Header';
 
+import { useSelector } from 'react-redux'
+
 const Dashboard = (props) => {
+    const userDetails = useSelector((state) => state.user.userDetails);
+
+    useEffect(() => {
+        console.log('DATA__', userDetails);
+    }, []);
 
     return (
         <>

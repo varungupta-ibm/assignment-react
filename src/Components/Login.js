@@ -5,8 +5,12 @@ import { toast } from 'react-toastify';
 import { content, validate } from "./Services/Config";
 import service from "./Services/UserServices";
 
+import { useDispatch } from 'react-redux'
+import { storeUserDetails } from '../redux/reducer'
+
 const Login = (props) => {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
@@ -16,6 +20,7 @@ const Login = (props) => {
             .then((res) => {
                 console.log('response', res);
                 localStorage.setItem('user-details', JSON.stringify(res));
+                dispatch(storeUserDetails(res))
                 callback();
             })
             .catch((err) => {

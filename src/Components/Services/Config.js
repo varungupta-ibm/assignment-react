@@ -4,7 +4,7 @@ const Content = {
         PHONE: 'Enter a valid phone number.',
         NAME: 'Enter a valid name.',
         EMPLOYER: 'Select an employer.',
-        PASSWORD: 'Enter a valid password.'    
+        PASSWORD: 'Enter a valid password.'
     },
     ADMIN: 'EMPLOYER',
     USER: 'EMPLOYEE'
@@ -122,8 +122,9 @@ const Validate = (Elm, msg) => {
                 Elm.classList.remove("error");
                 return true;
             }
+        default:
+            return true;
     }
-    return true;
 }
 
 module.exports.content = Content;
