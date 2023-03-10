@@ -85,5 +85,13 @@ $theme-colors: (
             align-items: center;
             gap: 10px;
         }
+
+        .home-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 15px;
+            font-size: 14px;
+        }
     }
 }

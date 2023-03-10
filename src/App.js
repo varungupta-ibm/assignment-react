@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 // Components
 import PageNotFound from './components/PageNotFound';
+import Home from './components/Home';
 import Login from './components/Login';
 import Register from './components/Regsiter';
 import Header from './components/Header';
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route path="*" element={<PageNotFound />} />
           <Route path="/404" element={<PageNotFound />} />
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/header" element={<Header />} />
