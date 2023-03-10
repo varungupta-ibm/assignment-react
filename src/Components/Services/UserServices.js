@@ -1,18 +1,24 @@
 import axios from "axios";
 
 const BASE_URL = 'http://127.0.0.1:8080/api';
-const AUTH_TOKEN = localStorage.getItem('user-token');
+const CONT_TYPE = 'application/x-www-form-urlencoded';
 
-const auth = axios.create({
-    baseURL: BASE_URL
+// Authentication Instance
+const auth = axios.create();
+auth.interceptors.request.use(config => {
+    config.baseURL = BASE_URL;
+    config.headers['Content-Type'] = CONT_TYPE;
+    return config;
 });
-auth.defaults.headers.common['Content-Type'] = 'application/x-www-form-urlencoded';
 
-const user = axios.create({
-    baseURL: BASE_URL
+// Logged-in user Instance
+const user = axios.create();
+user.interceptors.request.use(config => {
+    config.baseURL = BASE_URL;
+    config.headers['Content-Type'] = CONT_TYPE;
+    config.headers['Authorization'] = localStorage.getItem('user-token');
+    return config;
 });
-user.defaults.headers.common['Authorization'] = AUTH_TOKEN;
-user.defaults.headers.common['Content-Type'] = 'application/x-www-form-urlencoded';
 
 const service = {
     LoginUser: async (req) => {
@@ -24,6 +30,7 @@ const service = {
                 throw res;
             }
         } catch (err) {
+            console.log(err);
             throw err.response.data;
         }
     },

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import { toast } from 'react-toastify';
+import { content } from "./Services/Config";
 
 import service from "./Services/UserServices";
 import Container from 'react-bootstrap/Container';
@@ -12,7 +13,7 @@ const Employees = (props) => {
     const [employeeList, setEmployeeList] = useState([]);
 
     const getEmployeeList = () => {
-        const req = { userType: 'EMPLOYEE', adminId: userData.id };
+        const req = { userType: content.USER, adminId: userData.id };
         service.getEmployees(req)
             .then((res) => {
                 // console.log('employees', res.data);

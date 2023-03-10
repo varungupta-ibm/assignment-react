@@ -14,7 +14,6 @@ const Header = () => {
     const [showEmployeeTab, setShowEmployeeTab] = useState(false);
 
     const logout = () => {
-        console.log('Logout Clicked !');
         localStorage.clear();
         navigate("/login");
     }

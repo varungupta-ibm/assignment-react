@@ -8,7 +8,7 @@ const PageNotFound = (props) => {
             <p>
                 <code>Page not found ..</code>
                 <br />
-                <a className='btn-404' onClick={() => navigate('/')}>Return to home</a>
+                <a className='btn-404' onClick={() => navigate('/login')}>Return to home</a>
             </p>
         </header>
     );

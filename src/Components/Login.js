@@ -14,7 +14,7 @@ const Login = (props) => {
     const verifyUserDetails = (callback) => {
         service.getUserDetails()
             .then((res) => {
-                console.log('response', res);
+                // console.log('response', res);
                 localStorage.setItem('user-details', JSON.stringify(res));
                 callback();
             })
@@ -31,9 +31,9 @@ const Login = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const checkemail = handleValidation(document.getElementById('email'));
+        const checkEmail = handleValidation(document.getElementById('email'));
         const checkPassword = handleValidation(document.getElementById('password'));
-        if (checkemail && checkPassword) {
+        if (checkEmail && checkPassword) {
             service.LoginUser({ email: email, password: password })
                 .then((res) => {
                     // console.log('res', res);
@@ -45,7 +45,7 @@ const Login = (props) => {
                         }), 2000);
                 })
                 .catch((err) => {
-                    // console.log('err', err);
+                    console.log('err', err);
                     toast.error(err.message, { toastId: 'error', });
                 });
         }

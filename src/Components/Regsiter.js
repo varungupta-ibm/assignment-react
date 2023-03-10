@@ -29,7 +29,7 @@ const Register = (props) => {
 
     const handleChangeRole = (role) => {
 
-        if (role === 'EMPLOYEE') {
+        if (role === content.USER) {
             getEmployerList();
         }
         setUserType(role);
@@ -78,14 +78,14 @@ const Register = (props) => {
         const checkName = handleValidation(document.getElementById('name'));
         const checkPhone = handleValidation(document.getElementById('phone'));
         const checkPassword = handleValidation(document.getElementById('password'));
-        if (userType === 'EMPLOYEE') {
+        if (userType === content.USER) {
             checkEmployer = handleValidation(document.getElementById('employer'));
         }
 
         if (checkemail && checkName && checkPhone && checkPassword) {
 
             let req;
-            if (userType === 'EMPLOYEE') {
+            if (userType === content.USER) {
                 req = {
                     email: email,
                     name: name, phone: phone,
@@ -174,11 +174,11 @@ const Register = (props) => {
                                 onChange={(e) => handleChangeRole(e.target.value)}
                             >
                                 <option defaultValue value={content.ADMIN}>Employer</option>
-                                <option value="EMPLOYEE">Employee</option>
+                                <option value={content.USER}>Employee</option>
                             </select>
                         </div>
 
-                        {userType === "EMPLOYEE" ? (
+                        {userType === content.USER ? (
                             <div className="form-group mt-3">
                                 <label>Employer</label>
                                 <select
