@@ -13,6 +13,7 @@ const Header = () => {
     const userData = JSON.parse(localStorage.getItem('user-details'));
     const [showEmployeeTab, setShowEmployeeTab] = useState(false);
 
+    // Handle logout
     const logout = () => {
         localStorage.clear();
         navigate("/login");

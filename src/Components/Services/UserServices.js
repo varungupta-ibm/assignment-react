@@ -82,9 +82,33 @@ const service = {
             throw err.response.data;
         }
     },
-    verifyUser: async (req) => {
+    verifyUser: async (ID) => {
         try {
-            const res = await user.put(`/verify-employee/${req}`);
+            const res = await user.put(`/verify-employee/${ID}`);
+            if (res && res.status === 200) {
+                return res.data;
+            } else {
+                throw res;
+            }
+        } catch (err) {
+            throw err.response.data;
+        }
+    },
+    updateUser: async (ID, req) => {
+        try {
+            const res = await user.put(`/update-user/${ID}`, req);
+            if (res && res.status === 200) {
+                return res.data;
+            } else {
+                throw res;
+            }
+        } catch (err) {
+            throw err.response.data;
+        }
+    },
+    removeUser: async (ID) => {
+        try {
+            const res = await user.delete(`/delete-user/${ID}`);
             if (res && res.status === 200) {
                 return res.data;
             } else {

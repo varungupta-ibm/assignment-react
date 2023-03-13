@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import PageNotFound from './components/PageNotFound';
 import Home from './components/Home';
 import Login from './components/Login';
-import Register from './components/Regsiter';
+import Register from './components/Register';
 import Header from './components/Header';
 import Dashboard from './components/Dashboard';
 import Employees from './components/Employees';

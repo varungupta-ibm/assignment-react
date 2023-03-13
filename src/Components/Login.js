@@ -11,6 +11,7 @@ const Login = (props) => {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
 
+    // Handle verify user details after login service call
     const verifyUserDetails = (callback) => {
         service.getUserDetails()
             .then((res) => {
@@ -23,11 +24,13 @@ const Login = (props) => {
             });
     }
 
+    // Handle validation for submit login
     const handleValidation = (elm) => {
         let message = elm.id === "email" ? content.errors.EMAIL : content.errors.PASSWORD;
         return validate(elm, message);
     }
 
+    // Handle submit for login
     const handleSubmit = (e) => {
         e.preventDefault();
 

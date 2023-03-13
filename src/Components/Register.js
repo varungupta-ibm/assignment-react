@@ -16,6 +16,7 @@ const Register = (props) => {
     const [employer, setEmployer] = useState();
     const [employerList, setEmployerList] = useState([]);
 
+    // Handle employer list service call
     const getEmployerList = () => {
         service.getEmployers()
             .then((res) => {
@@ -27,6 +28,7 @@ const Register = (props) => {
             });
     }
 
+    // Handle on change role dropdown
     const handleChangeRole = (role) => {
 
         if (role === content.USER) {
@@ -35,6 +37,7 @@ const Register = (props) => {
         setUserType(role);
     }
 
+    // Handle verify user details after registeration
     const verifyUserDetails = (callback) => {
         service.getUserDetails()
             .then((res) => {
@@ -47,6 +50,7 @@ const Register = (props) => {
             });
     }
 
+    // Handle validation for submit register
     const handleValidation = (elm) => {
 
         let message;
@@ -70,6 +74,7 @@ const Register = (props) => {
         return validate(elm, message);
     }
 
+    // Handle submit for register
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -80,9 +85,11 @@ const Register = (props) => {
         const checkPassword = handleValidation(document.getElementById('password'));
         if (userType === content.USER) {
             checkEmployer = handleValidation(document.getElementById('employer'));
+        } else {
+            checkEmployer = true;
         }
 
-        if (checkemail && checkName && checkPhone && checkPassword) {
+        if (checkemail && checkName && checkPhone && checkPassword && checkEmployer) {
 
             let req;
             if (userType === content.USER) {
