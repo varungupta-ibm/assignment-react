@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import { content, validate } from "./Services/Config";
 import service from "./Services/UserServices";
 
-const Login = (props) => {
+const Login = () => {
     const navigate = useNavigate();
 
     const [email, setEmail] = useState();

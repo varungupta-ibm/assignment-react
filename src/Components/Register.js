@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import { content, validate } from "./Services/Config";
 import service from "./Services/UserServices";
 
-const Register = (props) => {
+const Register = () => {
     const navigate = useNavigate();
 
     const [email, setEmail] = useState();

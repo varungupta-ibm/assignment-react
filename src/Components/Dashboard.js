@@ -1,7 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Header from './Header';
 
-const Dashboard = (props) => {
+const Dashboard = () => {
 
     return (
         <>

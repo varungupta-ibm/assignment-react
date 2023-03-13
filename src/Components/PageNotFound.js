@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
-const PageNotFound = (props) => {
+const PageNotFound = () => {
     const navigate = useNavigate();
 
     return (

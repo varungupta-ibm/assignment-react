@@ -10,7 +10,7 @@ import service from "./Services/UserServices";
 import Container from 'react-bootstrap/Container';
 import Header from './Header';
 
-const Employees = (props) => {
+const Employees = () => {
     const userData = JSON.parse(localStorage.getItem('user-details'));
     const [employeeList, setEmployeeList] = useState([]);
 
